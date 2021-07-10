@@ -1,0 +1,77 @@
+﻿@page "/applyCompany/{Company}"
+
+@inject HttpClient Http
+@inject CandidateStateService Model
+<h3 style="color:white"> @msg</h3>
+@if (showCompany)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="text-center mt-3" style="color: white;">Apply For Job </h2>
+            <EditForm Model="@editPost" OnValidSubmit="@applyCompanyJob">
+                <DataAnnotationsValidator></DataAnnotationsValidator>
+                <input readonly @bind-value="@editPost.CompanyName" class="form-control  mt-3" type="text" placeholder="Company Name"><br>
+                <input @bind-value="@getJob" class="form-control mt-3" type="text" placeholder="Job Title" required>
+
+                <input @bind-value="@Model.MyCandidateState.CandidateName" class="form-control mt-3" type="text" placeholder="Candidate Name">
+                <div style="color:red">
+                    <ValidationMessage For="@(()=>Model.MyCandidateState.CandidateName)"></ValidationMessage>
+                </div><br>
+                <input @bind-value="@Model.MyCandidateState.CandidateEmail" class="form-control mt-3" type="text" placeholder="Candidate Email">
+                <div style="color:red">
+                    <ValidationMessage For="@(()=>Model.MyCandidateState.CandidateEmail)"></ValidationMessage>
+                </div><br>
+                <input readonly @bind-value="@editPost.CompanyLocation" class="form-control mt-3" type="text" placeholder="Job Location"><br>
+                <div class="formfooter text-right">
+                    <input class="btn btn-primary" type="submit" value="Apply" />
+                </div>
+            </EditForm>
+
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Company { get; set; }
+    string getJob = "";
+    Company editPost = new Company();
+
+    bool showCompany = false;
+    string msg = "";
+    string result = "";
+    protected override async Task OnInitializedAsync()
+    {
+        List<Company> posts;
+
+
+        result = await Http.GetStringAsync("odata/companies");
+        posts = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<Company>>(result).Value;
+        foreach (Company post in posts)
+        {
+            if (post.CompanyId.ToString() == Company.ToString())
+            {
+                editPost = post;
+            }
+        }
+        showCompany = true;
+
+
+    }
+    public void applyCompanyJob()
+    {
+        ApplyJob apply = new ApplyJob();
+        apply.CandidateName = Model.MyCandidateState.CandidateName;
+        apply.CompanyName = editPost.CompanyName;
+        apply.JobLocation = editPost.CompanyLocation;
+        apply.JobTitle = getJob;
+        apply.CandidateEmail = Model.MyCandidateState.CandidateEmail;
+        Http.PostAsJsonAsync<ApplyJob>("api/applyjobCrud", apply);
+        showCompany = false;
+        msg = "Successfully Applied.";
+
+    }
+
+}
+
+

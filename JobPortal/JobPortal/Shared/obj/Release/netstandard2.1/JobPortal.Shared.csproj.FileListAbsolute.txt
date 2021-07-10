@@ -1,0 +1,9 @@
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\bin\Release\netstandard2.1\JobPortal.Shared.deps.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\bin\Release\netstandard2.1\JobPortal.Shared.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\bin\Release\netstandard2.1\JobPortal.Shared.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\obj\Release\netstandard2.1\JobPortal.Shared.csprojAssemblyReference.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\obj\Release\netstandard2.1\JobPortal.Shared.AssemblyInfoInputs.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\obj\Release\netstandard2.1\JobPortal.Shared.AssemblyInfo.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\obj\Release\netstandard2.1\JobPortal.Shared.csproj.CoreCompileInputs.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\obj\Release\netstandard2.1\JobPortal.Shared.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\JobPortal\JobPortal\Shared\obj\Release\netstandard2.1\JobPortal.Shared.pdb

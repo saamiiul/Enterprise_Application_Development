@@ -1,0 +1,5 @@
+﻿<linker>
+  <assembly fullname="JobPortal.Client">
+    <type fullname="*" required="true" />
+  </assembly>
+</linker>

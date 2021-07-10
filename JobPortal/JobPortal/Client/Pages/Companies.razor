@@ -1,0 +1,102 @@
+﻿@page "/companies"
+@inject HttpClient Http
+@inject CompanyStateService Model
+@inject CandidateStateService CandidateModel
+@implements IDisposable
+@inject CompanyLoginService CompanyLoginServiceModel
+
+@if(CompanyLoginServiceModel.MyCompanyLogin)
+            {
+                <a class="btn btn-primary" href="/notifications">Notifications</a>
+            }
+@if (show)
+    {
+        @foreach (Company com in companies)
+        {
+           <CompaniesCard company="com"></CompaniesCard>
+        }
+    }
+
+<div class="container">
+    <div class="row mt-5">
+        
+    </div>
+</div>
+
+<div class="modal fade" id="postcompany" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            <div class="modal-body">
+                <div class="container">
+                    <div class="togglebtns text-center mb-5">
+
+
+                    </div>
+                    <div id="candidateloginform">
+                        <EditForm Model="@post" OnSubmit="AddPost">
+                            <h2 class="text-center mt-3" style="color: white;">Post Your Company Details</h2>
+                            <input @bind-value="@post.CompanyName" class="form-control  mt-3" type="text" placeholder="Company Name"><br>
+                            <input @bind-value="@post.JobTitle" class="form-control mt-3" type="text" placeholder="Job Title"><br>
+                            <input @bind-value="@post.JobInfo" class="form-control mt-3" type="text" placeholder="Job Info"><br>
+                            <input @bind-value="@post.JobLocation" class="form-control mt-3" type="text" placeholder="Job Location"><br>
+                            <div class="formfooter text-right">
+                                <input class="btn btn-primary" type="submit" value="Post">
+                            </div>
+
+                        </EditForm>
+                    </div>
+                    <div id="companyloginform">
+                        <form action="" method="POST">
+                            <h2 class="text-center" style="color: white;">Company Login</h2>
+                            <input class="form-control " type="email" placeholder="Email"><br>
+                            <input class="form-control " type="password" placeholder="Password"><br>
+                            <div class="formfooter text-right">
+                                <input class="btn btn-primary" type="submit" value="Login">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@code {
+
+    CompanyPost post = new CompanyPost();
+    string successfull = "hi  how ";
+    bool showApplyBtn = false;
+    string showPostBtn = "";
+    Company[] companies;
+    string result = "";
+    bool show = false;
+    public void AddPost()
+    {
+        post.CompanyId = Model.MyCompanyState.CompanyId;
+        Http.PostAsJsonAsync<CompanyPost>("api/CompanyPostCrud", post);
+        show = true;
+        successfull = Model.MyCompanyState.CompanyName;
+        post = new CompanyPost();
+
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        result = await Http.GetStringAsync("odata/companies");
+        companies = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<Company>>(result).Value.ToArray();
+        Model.OnChange += StateHasChanged;
+        CandidateModel.OnChange += StateHasChanged;
+        CompanyLoginServiceModel.OnChange += StateHasChanged;
+        show = true;
+    }
+    public void Dispose()
+    {
+        Model.OnChange -= StateHasChanged;
+        CandidateModel.OnChange -= StateHasChanged;
+        CompanyLoginServiceModel.OnChange -= StateHasChanged;
+    }
+
+}

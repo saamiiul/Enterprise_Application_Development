@@ -1,0 +1,270 @@
+﻿@page "/"
+@inject HttpClient Http
+@inject SearchService SearchModel
+@inject SearchServiceClick SearchClickModel
+<div class="container fieldcontainer ">
+    <h3 class="headingtitle"> <span class="headingtitlespan">MOVE UP</span> TODAY!</h3>
+    <div class="bottomheading">Find Jobs, Employment & Career Opportunities</div>
+    <div class="container">
+        <form>
+            <div class="row fields ml-5">
+                <div class="field-item keyword col-md-3 col-sm-6">
+                    <div class="field-content">
+                        <label class="fieldlabels" for="keyword">Keyword?</label>
+                        <div class="inputselect">
+                            <i style="    color: #2980b9; " class="bi bi-pencil-square" aria-hidden="true"></i>
+                            <input @bind="@inputField" @oninput="@((e) => { inputField=(string)e.Value;})" type="text" name="keyword" placeholder="Enter job title...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-item keyword col-md-3 col-sm-6">
+                    <div class="field-content">
+                        <label class="fieldlabels" for="location">Location</label>
+                        <div class="inputselect">
+                            <i style="color: #2980b9; " class="bi bi-pencil-square" aria-hidden="true"></i>
+
+
+                            <select @onchange="OnSelectLocation" class="customselect">
+
+                                <option value=""></option>
+                                @if (showLocation)
+                                {
+                                    <option value="All">All</option>
+                                    @foreach (string loc in JobLocation)
+                                    {
+                                        <option value="@loc">@loc</option>
+                                    }
+                                }
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-item keyword col-md-3 col-sm-6">
+                    <div class="field-content">
+                        <label class="fieldlabels" for="location">Catagory</label>
+                        <div class="">
+                            <i style="color:#2980b9;" class="bi bi-briefcase-fill"></i>
+
+
+                            <select @onchange="OnSelectTitle" class="customselect">
+                                <option value=""></option>
+                                @if (showTitle)
+                                {
+                                    <option value="All">All</option>
+                                    @foreach (string title in JobTitle)
+                                    {
+                                        <option value="@title">@title</option>
+                                    }
+                                }
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formsubmitbtn col-md-3 col-sm-6">
+                    <a class="submitbtn" type="submit" @onclick="@displaySearchJobs" href="/jobs">
+                        <i style="color: white; font-size:x-large; "
+                           class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+
+
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+</div>
+
+<div class="mostsearched container text-center">
+    <div class="row ">
+        <div class="trendingkeywords col-md-5" style="color: white; margin-right: -160px;  ">
+            Trending Keywords:
+        </div>
+        <div class="searchedkeywords  col-md-7">
+            <ul>
+                <li>
+                    <a href="">PHP</a>
+                </li>
+                <li>
+                    <a href="">Design</a>
+                </li>
+                <li>
+                    <a href="">Developer</a>
+                </li>
+                <li>
+                    <a href="">Python</a>
+                </li>
+                <li>
+                    <a href="">Android</a>
+                </li>
+                <li>
+                    <a href="">Frontend</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="featuredcards col-md-2 col-sm-4">
+            <span style="margin-left: 50px; vertical-align: middle;
+        text-align: center;"></span> <span><i class="bi bi-laptop" style="font-size: 50px; "></i></span>
+            <div class="text-center">
+                <a href="#">IT & Computer</a>
+            </div>
+            <div class="jobsno text-center mt-2">
+                (8 Jobs)
+            </div>
+        </div>
+
+        <div class="featuredcards col-md-2 col-sm-4">
+            <span style="margin-left: 50px;  "></span><span><i class="bi bi-brush " style="font-size: 50px; text-align: center;"></i></span>
+            <div class="text-center">
+                <a href="#">Art & Design</a>
+            </div>
+            <div class="jobsno text-center mt-2">
+                (5 Jobs)
+            </div>
+        </div>
+
+        <div class="featuredcards col-md-2 col-sm-4">
+            <span style="margin-left: 50px;"><i class="bi bi-clipboard-data" style="font-size: 50px;"></i></span>
+            <div class="text-center">
+                <a href="#">Financial Services</a>
+            </div>
+            <div class="jobsno text-center mt-2">
+                (4 Jobs)
+            </div>
+        </div>
+
+        <div class="featuredcards col-md-2 col-sm-4">
+            <span style="margin-left: 50px;"><i class="bi bi-book" style="font-size: 50px;"></i></span>
+            <div class="text-center">
+                <a href="#">Education & Coachs</a>
+            </div>
+            <div class="jobsno text-center mt-2">
+                (2 Jobs)
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container text-center mt-5">
+    <div class="howitworks">
+        <h2>How it works.</h2>
+        <p>Find Jobs, Employment & Career Opportunities</p>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 text-center mt-5">
+            <span class="countstep" style="color: #2980b9;">1</span>
+            <div class="icon ">
+                <i class="bi bi-search howitworksiconregister"></i>
+            </div>
+            <div class=" howitworksinfo" style="margin-top: 70px;">
+                <h4>Register an Account</h4>
+                <p style=" font-size:13px; line-height: 25px; color: gray; ">
+                    Post a job to tell us about your project. We'll quickly match you with the right freelancers.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center mt-5">
+            <span class="countstep" style="color: #16a085;">2</span>
+            <div class="icon ">
+                <i class="bi bi-people-fill howitworksiconspecify"></i>
+
+            </div>
+            <div class=" howitworksinfo" style="margin-top: 70px;">
+                <h4>Specify & Search your job</h4>
+                <p style=" font-size:13px; line-height: 25px; color: gray; ">
+                    Browse profiles, reviews, and proposals then interview top candidates. Hire a favorite and begin your project.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center mt-5">
+            <span class="countstep" style="color: #e67e22;">3</span>
+            <div class="icon ">
+                <i class="bi bi-cursor-fill howitworksiconapply"></i>
+
+            </div>
+            <div class=" howitworksinfo" style="margin-top: 70px;">
+                <h4>Apply for job</h4>
+                <p style=" font-size:13px; line-height: 25px; color: gray; ">
+                    Use the Upwork platform to chat, share files, and collaborate from your desktop or on the go.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    string result = "";
+    string searchMsg = "";
+    CompanyPost[] posts;
+    string[] JobLocation;
+    string[] JobTitle;
+    bool showLocation = false;
+    bool showTitle = false;
+    string selectedLocation = "";
+    string selectedTitle = "";
+    public string inputField { get; set; } = "";
+    protected override async Task OnInitializedAsync()
+    {
+        result = await Http.GetStringAsync("odata/companyPost");
+        posts = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<CompanyPost>>(result).Value.ToArray();
+
+        JobLocation = new string[posts.Length];
+        for (int i = 0; i < posts.Length; i++)
+        {
+            JobLocation[i] = posts[i].JobLocation;
+        }
+        JobLocation = JobLocation.Distinct().ToArray();
+        JobTitle = new string[posts.Length];
+        for (int i = 0; i < posts.Length; i++)
+        {
+            JobTitle[i] = posts[i].JobTitle;
+        }
+        JobTitle = JobTitle.Distinct().ToArray();
+        showLocation = true;
+        showTitle = true;
+    }
+    void OnSelectLocation(ChangeEventArgs e)
+    {
+        selectedLocation = e.Value.ToString();
+    }
+    void OnSelectTitle(ChangeEventArgs e)
+    {
+        selectedTitle = e.Value.ToString();
+    }
+    public void displaySearchJobs()
+    {
+        SearchJob job = new SearchJob();
+        job.MyInputField = inputField;
+        job.MyLocation = selectedLocation;
+        job.MyTitle = selectedTitle;
+        SearchModel.MySearchJob = job;
+        SearchClickModel.MySearchClick = true;
+    }
+
+}

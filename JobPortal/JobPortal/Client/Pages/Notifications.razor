@@ -1,0 +1,57 @@
+﻿@page "/notifications"
+@inject HttpClient Http
+@inject CompanyStateService Model
+<h3 style="color:white">Notifications @msg</h3>
+@if(show)
+            {
+<table class="table table-dark">
+    <thead>
+        <tr>
+            
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Job Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ApplyJob job in findApplications)
+        {
+            <tr>
+                <td>@job.CandidateName</td>
+                <td>@job.CandidateEmail</td>
+                <td>@job.JobTitle</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+            }
+@code {
+    string result = "";
+    ApplyJob[] jobs;
+    bool show = false;
+    string msg = "";
+    List<ApplyJob> findApplications=new List<ApplyJob>();
+    protected override async Task OnInitializedAsync()
+    {
+        result = await Http.GetStringAsync("odata/applyJob");
+        jobs = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<ApplyJob>>(result).Value.ToArray();
+
+        foreach(ApplyJob job in jobs)
+        {
+            if(Model.MyCompanyState.CompanyName==job.CompanyName)
+            {
+                findApplications.Add(job);
+            }
+        }
+        if(findApplications.Count!=0)
+        {
+            show = true;
+        }
+        else
+        {
+            msg = "No Apply Job is find";
+        }
+    }
+}

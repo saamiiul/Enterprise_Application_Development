@@ -1,0 +1,77 @@
+﻿@inject HttpClient Http
+@inject CandidateStateService Model
+@inject CandidateLoginService CandidateLoginServiceModel
+@implements IDisposable
+<div class="companies mt-5 row" style="background-color:black !important; border-radius:20px;">
+            <div class="container">
+                <div class="companyname">
+                    <span><h3><a href="#">@company.CompanyName</a></h3></span>
+                    <span style="color:white">@company.CompanyMoto</span>
+                    <div class="companyinfo">
+                        <span class="leftside">
+                            <span><i class="bi bi-book" style="color: #2980b9;"></i></span>
+                            <span style="color:white">@company.CompanyEmail</span>
+                        </span>
+                        <span class="rightside">
+                            <span><i class="bi bi-geo-alt-fill" style="color: #2980b9;"></i></span>
+                            <span style="color:white">@company.CompanyLocation</span>
+                        </span>
+
+                    </div>
+                </div>
+                @if (CandidateLoginServiceModel.MyCandidateLogin)
+                {
+                <a class="applybtn" href="/applyCompany/@company.CompanyId" >Apply for Job</a>
+                }
+            </div>
+</div>
+<div class="modal fade" id="applycompany" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-toggle="modal" data-target="#applycompany" data-backdrop="true"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            <div class="modal-body">
+                <div class="container">
+                    <div class="togglebtns text-center mb-5">
+
+
+                    </div>
+                    <div class="text-center">
+                        <form action="" method="POST">
+                            <h2 class="text-center " style="color: white;">Apply For Job</h2>
+                            <input class="form-control  mt-3" type="email" placeholder="Email"><br>
+                            <label class="text-center">Attatch Curriculum Vitae</label>
+                            <input type="file"><br>
+                            <div class="formfooter text-right">
+                                <a class="btn btn-primary" type="submit" href="/applyCompany">Send</a>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public Company company { get; set; }
+    string result = "";
+    bool show = false;
+    bool MyApplyBtn = false;
+    protected override void OnInitialized()
+    {
+        show = true;
+        CandidateLoginServiceModel.OnChange += StateHasChanged;
+
+        base.OnInitialized();
+    }
+    public void Dispose()
+    {
+        CandidateLoginServiceModel.OnChange -= StateHasChanged;
+    }
+
+}

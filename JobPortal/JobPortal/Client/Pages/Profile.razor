@@ -1,0 +1,72 @@
+﻿@page "/profile"
+@inject CandidateStateService CandidateModel
+@inject CandidateLoginService CandidateLoginModel
+@inject CompanyStateService CompanyModel
+@inject CompanyLoginService CompanyLoginModel
+@inject HttpClient Http
+<div>
+    <h3>Profile Page</h3>
+    @if (CandidateLoginModel.MyCandidateLogin)
+    {
+        <div class="container text-center mt-5">
+
+            <h1 style="color:white;">Update Profile</h1>
+            <h5 style="color:green">@successful</h5>
+            <EditForm Model="@CandidateModel.MyCandidateState" OnValidSubmit="updateCandidate">
+                <DataAnnotationsValidator></DataAnnotationsValidator>
+                <input class="form-control mt-3" type="text" @bind-value="@CandidateModel.MyCandidateState.CandidateName" placeholder="Name" /><br />
+                <div style="color:red">
+                    <ValidationMessage For="@(()=>CandidateModel.MyCandidateState.CandidateName)"></ValidationMessage>
+                </div>
+                <input class="form-control" @bind-value="@CandidateModel.MyCandidateState.CandidateEmail" type="email" placeholder="Email Address" readonly /><br />
+                <input class="form-control" type="password" @bind-value="@CandidateModel.MyCandidateState.CandidatePassord" placeholder="Password"  /><br />
+                <div style="color:red">
+                    <ValidationMessage For="@(()=>CandidateModel.MyCandidateState.CandidatePassord)"></ValidationMessage>
+                </div>
+                <input class="btn btn-success" type="submit" value="Update" />
+            </EditForm>
+        </div>
+    }
+    @if (CompanyLoginModel.MyCompanyLogin)
+    {
+        <div class="container text-center mt-5">
+
+            <h1 style="color:white;">Update Profile</h1>
+            <h5 style="color:green">@successful</h5>
+            <EditForm Model="@CompanyModel.MyCompanyState" OnValidSubmit="updateCompany">
+                <DataAnnotationsValidator></DataAnnotationsValidator>
+                <input class="form-control mt-3" type="text" @bind-value="@CompanyModel.MyCompanyState.CompanyName" placeholder="Company Name" readonly /><br />
+                <input class="form-control" @bind-value="@CompanyModel.MyCompanyState.CompanyEmail" type="email" placeholder="Company Email Address" readonly /><br />
+                <input class="form-control" @bind-value="@CompanyModel.MyCompanyState.CompanyMoto" type="text" placeholder="Motto" /><br />
+                <input class="form-control" @bind-value="@CompanyModel.MyCompanyState.CompanyLocation" type="text" placeholder="Company Location" /><br />
+                <div style="color:red">
+                    <ValidationMessage For="@(()=>CompanyModel.MyCompanyState.CompanyLocation)"></ValidationMessage>
+                </div>
+                <input class="form-control" type="password" @bind-value="@CompanyModel.MyCompanyState.CompanyPassword" placeholder="Password" /><br />
+                <div style="color:red">
+                    <ValidationMessage For="@(()=>CompanyModel.MyCompanyState.CompanyPassword)"></ValidationMessage>
+                </div>
+                <input class="btn btn-success" type="submit" value="Update"/>
+            </EditForm>
+        </div>
+    }
+
+</div>
+
+@code {
+    string successful = "";
+
+    public void updateCandidate()
+    {
+        string query = $"api/Add/{CandidateModel.MyCandidateState.CandidateId}";
+        Http.PutAsJsonAsync<Candidate>(query, CandidateModel.MyCandidateState);
+        successful = "Update Successfully";
+    }
+    public void updateCompany()
+    {
+        string query = $"api/company/{CompanyModel.MyCompanyState.CompanyId}";
+        Http.PutAsJsonAsync<Company>(query, CompanyModel.MyCompanyState);
+        successful = "Update Successfully";
+    }
+
+}

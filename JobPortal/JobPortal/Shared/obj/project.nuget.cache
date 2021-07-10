@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ySfPcBJ5VJPB7/mOQMppofX4gEUG5cMM+gVHFG29ZSEswpdQo8MCcnbQW/N11ZVwpQTRSiLYiiKByOg3Dmxouw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Shared\\JobPortal.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\samiu\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

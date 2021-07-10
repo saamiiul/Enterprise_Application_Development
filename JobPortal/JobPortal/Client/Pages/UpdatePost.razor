@@ -1,0 +1,63 @@
+﻿@page "/updatePost/{postID}"
+@inject HttpClient Http
+<div class="row">
+    <div class="col-md-4">
+        <EditForm Model="@editPost" OnValidSubmit="update">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <h2 class="text-center mt-3" style="color: white;">Update Post Job </h2>
+            <input @bind-value="@editPost.CompanyName" class="form-control  mt-3" type="text" placeholder="Company Name">
+            <div style="color:red">
+                <ValidationMessage For="@(()=>editPost.CompanyName)"></ValidationMessage>
+            </div><br>
+            <input @bind-value="@editPost.JobTitle" class="form-control mt-3" type="text" placeholder="Job Title">
+            <div style="color:red">
+                <ValidationMessage For="@(()=>editPost.JobTitle)"></ValidationMessage>
+            </div><br>
+            <input @bind-value="@editPost.JobInfo" class="form-control mt-3" type="text" placeholder="Job Info">
+            <div style="color:red">
+                <ValidationMessage For="@(()=>editPost.JobInfo)"></ValidationMessage>
+            </div><br>
+            <input @bind-value="@editPost.JobLocation" class="form-control mt-3" type="text" placeholder="Job Location">
+            <div style="color:red">
+                <ValidationMessage For="@(()=>editPost.JobLocation)"></ValidationMessage>
+            </div><br>
+            <div class="formfooter text-right">
+                <input  class="btn btn-primary" type="submit" value="Update" />
+            </div>
+
+        </EditForm>
+       
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public string postId { get; set; }
+
+    CompanyPost editPost = new CompanyPost();
+    string result = "";
+    public void update()
+    {
+        string query = $"api/CompanyPostCrud/{postId}";
+        Http.PutAsJsonAsync<CompanyPost>(query, editPost);
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        List<CompanyPost> posts;
+        result = await Http.GetStringAsync("odata/companyPost");
+        posts = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<CompanyPost>>(result).Value;
+        foreach(CompanyPost post in posts)
+        {
+            if(post.CompanyPostId.ToString() == postId.ToString())
+            {
+                editPost = post;
+
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,44 @@
+﻿@model JobPortal.Server.Models.Candidate
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Candidate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CandidateId" />
+            <div class="form-group">
+                <label asp-for="CandidateName" class="control-label"></label>
+                <input asp-for="CandidateName" class="form-control" />
+                <span asp-validation-for="CandidateName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CandidateEmail" class="control-label"></label>
+                <input asp-for="CandidateEmail" class="form-control" />
+                <span asp-validation-for="CandidateEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CandidatePassord" class="control-label"></label>
+                <input asp-for="CandidatePassord" class="form-control" />
+                <span asp-validation-for="CandidatePassord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

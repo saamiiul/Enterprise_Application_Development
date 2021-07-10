@@ -1,0 +1,107 @@
+﻿@inject HttpClient Http
+@inject CandidateLoginService CandidateLoginServiceModel
+@inject CompanyLoginService CompanyLoginServiceModel
+@inject CompanyStateService CompanyModel
+@implements IDisposable
+<div class="col-md-8 col-sm-12  mx-auto jobcard mt-5" style="max-height: 150px; background-color:black">
+    
+    
+     
+        
+            <div class="job-name">
+                <a href="">@post.JobTitle</a>
+                <span>
+                    @if (CandidateLoginServiceModel.MyCandidateLogin)
+                    {
+                        <a class="jobtimes" href="/applyJob/@post.CompanyPostId">Apply Now</a>
+                    }
+                </span>
+
+
+            </div>
+            <div class="jobdetails">
+                <ul>
+                    <li>
+                        <span><i class="bi bi-building" style="color: #2980b9;"></i></span>
+                        <span style="color: white;">@post.CompanyName</span>
+                    </li>
+                    <li>
+                        <span><i class="bi bi-book" style="color: #2980b9;"></i></span>
+                        <span style="color: white;">@post.JobInfo</span>
+                    </li>
+                    <li>
+                        <span><i class="bi bi-calendar3" style="color: #2980b9;"></i></span>
+                        <span style="color: white;">POSTED DATE</span>
+                    </li>
+                    <li>
+                        <span><i class="bi bi-geo-alt-fill" style="color: #2980b9;"></i></span>
+                        <span style="color: white;">@post.JobLocation</span>
+                    </li>
+
+                </ul>
+                @if (CompanyLoginServiceModel.MyCompanyLogin)
+                {
+                    @if (post.CompanyId == CompanyModel.MyCompanyState.CompanyId)
+                    {
+                        <a class="btn btn-warning" href="/updatePost/@post.CompanyPostId">Update</a>
+                        <a class="btn btn-danger" href="/deletePost/@post.CompanyPostId">Delete</a>
+                    }
+                }
+            </div>
+    
+    
+</div>
+
+
+
+
+
+<div class="modal fade" id="applyjob" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            <div class="modal-body">
+                <div class="container">
+                    <div class="togglebtns text-center mb-5">
+
+
+                    </div>
+                    <div class="text-center">
+                        <form action="" method="POST">
+                            <h2 class="text-center " style="color: white;">Apply For Job</h2>
+                            <input class="form-control  mt-3" type="email" placeholder="Email"><br>
+                            <label class="text-center">Attatch Curriculum Vitae</label>
+                            <input type="file"><br>
+                            <div class="formfooter text-right">
+                                <input class="btn btn-primary" type="submit" value="Send">
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public CompanyPost post { get; set; }
+    protected override void OnInitialized()
+    {
+        CompanyModel.OnChange += StateHasChanged;
+        CandidateLoginServiceModel.OnChange += StateHasChanged;
+        CompanyLoginServiceModel.OnChange += StateHasChanged;
+        base.OnInitialized();
+    }
+    public void Dispose()
+    {
+        CandidateLoginServiceModel.OnChange -= StateHasChanged;
+        CompanyLoginServiceModel.OnChange -= StateHasChanged;
+        CompanyModel.OnChange -= StateHasChanged;
+    }
+
+}

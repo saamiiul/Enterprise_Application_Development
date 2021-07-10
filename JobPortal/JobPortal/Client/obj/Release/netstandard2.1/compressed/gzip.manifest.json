@@ -1,0 +1,209 @@
+{
+  "FilesToCompress": [
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\HDSgw9INLrwD-BamUnmDEMKTJGt-J5EWbI3BAOwEgPA=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\JobPortal.Client.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/JobPortal.Client.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Bcav7tBLf6TV62bEY3ARGGgqwKcQiDB_UTjFdu-aJzA=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\JobPortal.Shared.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/JobPortal.Shared.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Kjvax-5VvvnuVT-RrMOFxjzTUkjZ23Quqjad9325ens=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\apQ62jHf8oBp_GTUPi0l8ZV3Mtg-4mnsqNl68xj-H-g=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Forms.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Forms.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gPYfU0OgGHkT5toq7kNhFOt9g_ZJMGr9vDpCHZnlH38=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fkLjORQ4aMfQOMuFXvGYYlpysAGdS5LB2HIEEFWm0j8=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\jzHgXWAvWMkKIGFjZoT84tbe72E_H7CvTr-Dryh4QPs=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.AsyncInterfaces.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\S8gwM7AhL-1a6TDrQpTUFZ3MnimavwbD3NRqj4RlqCU=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Abstractions.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\pWAOzKQiu01TSzRkfvGig-gRa2gBujc1KcENw7SQm84=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\tTuduttWlrZo08P8ktcR2dGPONmpC3GkIKObO37Ucmo=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Json.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\W0RUjAg5xfkkuhg5Nx96po5dIK868ZAxebf5e2o8HJU=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\EZqwJsJ2_tkOe0Gz5HCPz3fbHowQFj4Y5OsMmPJgK_o=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\_mdJttjz-K0pWMrTKJI2snNEYNv0mFHvGY4TGvE_zOw=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\TDn03uGLbEkrJfKAaisl7ZwEotH2gjyxucoDDxi6rxo=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\klhfrjtAOTrKJyA3tE7BZRHJ7V2M02JuZmAmJizvCVo=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Options.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Options.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\KaYbhMXtmCY8r6qnWh3fSQp8Hy9rhRtOKuw8wDBso-Y=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Primitives.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Primitives.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3cbvJEo8k8VJVQwyEZWWQ6yGRFQW8-219DaOnmsX3e4=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\zV-OfJNfNsG404X30Pwkdymdh1KmZpTVEmG-JNFVc-k=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ryYY2nunhqXr6c2jtO0PYhwm48Kvpw0trY5TBBbVzXg=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Mono.Security.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Mono.Security.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ao_IJIsINTQz0LLTzQ8VTPWEDvOadQXSSCKvxKsyMBs=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\mscorlib.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/mscorlib.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\I5NWb7oJmzm_0haZAgC6ndW-2YaJ0rIz0JOYeU-nenQ=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Newtonsoft.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Newtonsoft.Json.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\4EeZbhpxQwMYPtRljgEMIQIyZk7UMuAPTP7W3QSlcrM=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.ComponentModel.DataAnnotations.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.ComponentModel.DataAnnotations.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\XWqcs9zbgLO3YoWLg3ZmkLCFstc8j09KJRqnyYx2C8g=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Core.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Core.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6TNhdW0-nOYNIVs9eQnyfrtRDH8FGZXc54RA7sAYPcI=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Data.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Data.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ZuoGoSC8HJc2hiru7cUB1q47fYNOk62zlcxMCtFtkL0=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\kNDywJLUqIqd2opIlUx4SnqSgPoCg6ezR-53MlSusfk=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\__A4GjNKNQTezrNgkev-0AaDluTN32I7nACBmBX3HD4=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.Json.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\PNNMawr3JkYQ5XAvhj1tXa0MJczWnoOCSv8zfz5Y0lE=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.WebAssemblyHttpHandler.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.WebAssemblyHttpHandler.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\4TS888Mcy4OUxZQHHNNNxDAPxhGgkX3Kes8BEquZEbc=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Numerics.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Numerics.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\au99SCS7ElmeB7bpf1kMT60-qK6AkcCyjDK_NSH1LZw=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.CompilerServices.Unsafe.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\to8VBs_O9BDgtD6uQ7Tt7lcLOGPwWoS4FAfswya6CpA=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.Serialization.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.Serialization.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\iLLCxmFtGVWsuQ-esvA6DjlprHyO_SOz_zQyP_d8UWw=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encodings.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encodings.Web.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xhbFRVg5HTd9_cbbtxMAAHudWd8SoTt_q5Yr1bxqo4Q=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Json.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Q9OHxT-fTiRBqS1z0j8dazU3XbmlojTerh25bia6gyE=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\OUjULMOkwHfX82RC9kWKjyq77sRqGE9ZaCSRmK0o_NM=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.Linq.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.Linq.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\iIXRSIEZngEO5B6-nh98ko5XyZrs7TXA2cjwtzFV1Xc=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Bindings.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/WebAssembly.Bindings.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=.hash",
+      "Source": "C:\\Users\\samiu\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.3.2.0.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.3.2.0.js.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3S0qzYaBEKOBXarzVLNzNAFXlwJr6nI3lFlYUpQTPH8=.hash",
+      "Source": "C:\\Users\\samiu\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.timezones.dat",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.timezones.dat.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UC-3Rm1NkdNdlIrzYARo_dO-HDlS5mhPxo0IQv7kma8=.hash",
+      "Source": "C:\\Users\\samiu\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.wasm",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.wasm.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SPHS1EAPAcMFN4TEIUYl3FWtoCQTsNJch0XVGgok1eE=.hash",
+      "Source": "C:\\Users\\samiu\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.build\\3.2.1\\tools\\blazor\\blazor.webassembly.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\KGso1O51Cj1clepn6JWJZ1e4O_MOrhUKjyfNAR56NWQ=.hash",
+      "Source": "C:\\Users\\samiu\\OneDrive\\Desktop\\Enterprise_Application_Development\\JobPortal\\JobPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\blazor.boot.json",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
+    }
+  ]
+}

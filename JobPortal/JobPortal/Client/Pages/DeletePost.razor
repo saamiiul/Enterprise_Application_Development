@@ -1,0 +1,15 @@
+﻿@page "/deletePost/{postID}"
+@inject HttpClient Http
+<h3>DeletePost</h3>
+<h4 style="color:whitesmoke">Are you sure you want to delete this Post?</h4>
+<a class="btn btn-success" @onclick="deletePost" href="/">Yes</a>
+<a class="btn btn-danger" href="/jobs">No</a>
+@code {
+    [Parameter]
+    public string postID { get; set; }
+    public void deletePost()
+    {
+        string query = $"api/CompanyPostCrud/{postID}";
+        Http.DeleteAsync(query);
+    }
+}

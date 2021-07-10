@@ -1,0 +1,30 @@
+﻿@page "/contactus"
+@inject HttpClient Http
+<div class="container text-center mt-5">
+
+    <h1 style="color:white;">Contact Us Now</h1>
+    @if(display)
+            {
+                <h5 style="color:green">@message</h5>
+            }
+    <EditForm Model="@contact" OnSubmit="AddFeedback">
+        <input class="form-control mt-3" type="text" name="cname" placeholder="Name" @bind-value="@contact.Name"/><br />
+        <input class="form-control" type="email" name="cemail" placeholder="Email" @bind-value="@contact.Email" /><br />
+        <input class="form-control" type="text" name="cname" placeholder="Message" @bind-value="@contact.Message"/><br />
+        <input class="form-control" type="text" name="cname" placeholder="Additional Details" @bind-value="@contact.AdditionalDetails"  style="height:100px;"/><br />
+        <input class="btn btn-success" type="submit" name="csubmit" value="Send" />
+    </EditForm>
+</div>
+
+@code {
+    string message = "";
+    bool display = false;
+    Contact contact = new Contact();
+    public void AddFeedback()
+    {
+        Http.PostAsJsonAsync<Contact>("api/Contact", contact);
+        display = true;
+        message = "Your Response is Saved";
+    }
+}
+

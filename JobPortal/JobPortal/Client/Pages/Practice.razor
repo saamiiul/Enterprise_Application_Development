@@ -1,0 +1,41 @@
+﻿@page "/practice/{id}"
+<div style="background-color:white; color:black" >
+    @foreach (var check in CheckBoxList())
+    {
+        <input class="custom-checkbox" type="checkbox" @onchange="eventArgs => { CheckboxClicked(check, eventArgs.Value); }" />
+        @check
+        <br />
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+    public List<string> CheckBox { get; set; } = new List<string>();
+    void CheckboxClicked(string CheckID, object checkedValue)
+    {
+        if ((bool)checkedValue)
+        {
+            if (!CheckBox.Contains(CheckID))
+            {
+                CheckBox.Add(CheckID);
+            }
+        }
+        else
+        {
+            if (CheckBox.Contains(CheckID))
+            {
+                CheckBox.Remove(CheckID);
+            }
+        }
+    }
+
+    public List<String> CheckBoxList()
+    {
+        List<String> checkBox = new List<String>();
+        checkBox.Add("CheckBox 1");
+        checkBox.Add("CheckBox 2");
+        return checkBox;
+    }
+}

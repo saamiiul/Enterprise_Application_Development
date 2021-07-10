@@ -1,0 +1,465 @@
+﻿@page "/jobs"
+@inject HttpClient Http
+@inject CompanyStateService CompanyModel
+@inject CandidateStateService CandidateModel
+@implements IDisposable
+@inject CompanyLoginService CompanyLoginServiceModel
+@inject SearchService SearchModel
+@inject SearchServiceClick SearchClickModel
+
+<div class="container jobs ">
+    <div class="row">
+    
+        <div class="filterdiv mt-5 col-md-3 col-sm-12" style="background-color:black">
+            <br />
+            <button class="btn btn-primary" @onclick="displayAllJobs" style="padding:5px;">All Jobs</button>
+            <br /><br />
+            <h5 style="color:white;">Search by Location</h5>
+
+            @if (showLocation)
+            {
+
+                @foreach (string postLocation in JobLocation)
+                {
+                    <h3>@loc</h3>
+                    <div class="checkbox mt-4">
+                        <input class="custom-checkbox" type="checkbox" @onchange="eventArgs => { CheckboxClicked(postLocation, eventArgs.Value); }" />
+                        <label for="lahore" class="checkinput">
+                            <span>@postLocation</span>
+                        </label>
+                    </div>
+
+                }
+
+
+            }
+            <div class="filtertitle mt-5">
+                <h5 style="color:white;">Search by job title</h5>
+
+                @if (showTitle)
+                {
+                    @foreach (string title in JobTitle)
+                    {
+                        <div class="checkbox mt-4">
+                            <input class="custom-checkbox" type="checkbox" @onchange="eventArgs => { TitleCheckboxClicked(title, eventArgs.Value); }" />
+                            <label for="lahore" class="checkinput">
+                                <span>@title</span>
+                            </label>
+                        </div>
+                    }
+                }
+
+
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            @if (CompanyLoginServiceModel.MyCompanyLogin)
+            {
+                <button class="btn btn-primary postjob" data-toggle="modal" data-target="#jobpost" data-backdrop="true">Post Your Job</button>
+            }
+            @if (jobNotFind)
+            {
+                <h3 style="color:white">@searchMsg</h3>
+            }
+
+            @if (showJobCard)
+            {
+                @foreach (CompanyPost postCard in posts)
+                {
+                    <JobCard post=postCard></JobCard>
+                }
+
+            }
+            @if (displayspecificLocation)
+            {
+                @foreach (CompanyPost postCard in specificLocations)
+                {
+                    <JobCard post=postCard></JobCard>
+                }
+
+            }
+            @if (displayspecificTitle)
+            {
+                @foreach (CompanyPost postCard in specificTitles)
+                {
+                    <JobCard post=postCard></JobCard>
+                }
+
+            }
+            @if (displaySearchJob)
+            {
+                @foreach (CompanyPost post in searchJobs)
+                {
+                    <JobCard post="post"></JobCard>
+                }
+            }
+
+
+
+        </div>
+       
+
+    </div>
+
+    <div class="modal fade" id="jobpost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="togglebtns text-center mb-5">
+
+
+                        </div>
+                        <div class="text-center">
+                            <EditForm Model="@post" OnValidSubmit="AddPost">
+                                <DataAnnotationsValidator></DataAnnotationsValidator>
+                                <h2 class="text-center mt-3" style="color: white;">Post Job </h2>
+                                <input @bind-value="@post.CompanyName" class="form-control  mt-3" type="text" placeholder="Company Name">
+                                <div style="color:red">
+                                    <ValidationMessage For="@(()=>post.CompanyName)"></ValidationMessage>
+                                </div><br>
+                                <input @bind-value="@post.JobTitle" class="form-control mt-3" type="text" placeholder="Job Title">
+                                <div style="color:red">
+                                    <ValidationMessage For="@(()=>post.JobTitle)"></ValidationMessage>
+                                </div><br>
+                                <input @bind-value="@post.JobInfo" class="form-control mt-3" type="text" placeholder="Job Info">
+                                <div style="color:red">
+                                    <ValidationMessage For="@(()=>post.JobInfo)"></ValidationMessage>
+                                </div><br>
+                                <input @bind-value="@post.JobLocation" class="form-control mt-3" type="text" placeholder="Job Location">
+                                <div style="color:red">
+                                    <ValidationMessage For="@(()=>post.JobLocation)"></ValidationMessage>
+                                </div><br>
+                                <div class="formfooter text-right">
+                                    <input class="btn btn-primary" type="submit" value="Post">
+                                </div>
+
+                            </EditForm>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+@code {
+    CompanyPost post = new CompanyPost();
+    string result = "";
+    string loc="";
+    CompanyPost[] posts;
+    string [] JobLocation;
+    string[] JobTitle;
+    List<CompanyPost> specificLocations = new List<CompanyPost>();
+    List<CompanyPost> specificTitles = new List<CompanyPost>();
+    bool showLocation = false;
+    bool showJobCard = false;
+    bool showTitle = false;
+    bool displayspecificLocation = false;
+    bool displayspecificTitle = false;
+    string searchMsg = "";
+    bool displaySearchJob = false;
+    bool jobNotFind = false;
+    List<CompanyPost> searchJobs = new List<CompanyPost>();
+    public void AddPost()
+    {
+        post.CompanyId = CompanyModel.MyCompanyState.CompanyId;
+        Http.PostAsJsonAsync<CompanyPost>("api/CompanyPostCrud", post);
+        post = new CompanyPost();
+
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        result = await Http.GetStringAsync("odata/companyPost");
+        posts = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<CompanyPost>>(result).Value.ToArray();
+        CompanyLoginServiceModel.OnChange += StateHasChanged;
+        JobLocation = new string[posts.Length];
+        for (int i = 0; i < posts.Length; i++)
+        {
+            JobLocation[i] = posts[i].JobLocation;
+        }
+        JobLocation=JobLocation.Distinct().ToArray();
+        JobTitle = new string[posts.Length];
+        for (int i = 0; i < posts.Length; i++)
+        {
+            JobTitle[i] = posts[i].JobTitle;
+        }
+        JobTitle = JobTitle.Distinct().ToArray();
+        showJobCard = true;
+        showLocation = true;
+        showTitle = true;
+
+        if(SearchClickModel.MySearchClick)
+        {
+            if (SearchModel.MySearchJob.MyTitle == "" && SearchModel.MySearchJob.MyLocation == "" && SearchModel.MySearchJob.MyInputField == "")
+            {
+                searchMsg = "Your Search Job is not Found";
+                jobNotFind = true;
+            }
+            else
+            {
+                if (SearchModel.MySearchJob.MyTitle != "" && SearchModel.MySearchJob.MyLocation == "" && SearchModel.MySearchJob.MyInputField == "")
+                {
+                    if(SearchModel.MySearchJob.MyTitle=="All")
+                    {
+                        foreach(CompanyPost post in posts)
+                        {
+                            searchJobs.Add(post);
+                        }
+                    }
+                    else
+                    {
+                        foreach(CompanyPost post in posts)
+                        {
+                            if(post.JobTitle==SearchModel.MySearchJob.MyTitle)
+                            {
+                                searchJobs.Add(post);
+                            }
+                        }
+                    }
+
+                }
+                else if (SearchModel.MySearchJob.MyTitle == "" && SearchModel.MySearchJob.MyLocation != "" && SearchModel.MySearchJob.MyInputField == "")
+                {
+                    if (SearchModel.MySearchJob.MyLocation == "All")
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            searchJobs.Add(post);
+                        }
+                    }
+                    else
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            if (post.JobLocation == SearchModel.MySearchJob.MyLocation)
+                            {
+                                searchJobs.Add(post);
+                            }
+                        }
+                    }
+                }
+
+                else if (SearchModel.MySearchJob.MyTitle == "" && SearchModel.MySearchJob.MyLocation == "" && SearchModel.MySearchJob.MyInputField != "")
+                {
+                    foreach(CompanyPost post in posts)
+                    {
+                        if(post.JobTitle.ToLower()==SearchModel.MySearchJob.MyInputField.ToLower())
+                        {
+                            searchJobs.Add(post);
+                        }
+                    }
+
+                }
+
+                else if (SearchModel.MySearchJob.MyTitle != "" && SearchModel.MySearchJob.MyLocation != "" && SearchModel.MySearchJob.MyInputField == "")
+                {
+                    if(SearchModel.MySearchJob.MyLocation=="All" && SearchModel.MySearchJob.MyTitle=="All")
+                    {
+                        foreach(CompanyPost post in posts)
+                        {
+                            searchJobs.Add(post);
+                        }
+                    }
+                    else if(SearchModel.MySearchJob.MyTitle!="All"&& SearchModel.MySearchJob.MyLocation=="All")
+                    {
+                        foreach(CompanyPost post in posts)
+                        {
+                            if(post.JobTitle==SearchModel.MySearchJob.MyTitle)
+                            {
+                                searchJobs.Add(post);
+                            }
+                        }
+                    }
+                    else if (SearchModel.MySearchJob.MyTitle == "All" && SearchModel.MySearchJob.MyLocation != "All")
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            if (post.JobLocation == SearchModel.MySearchJob.MyLocation)
+                            {
+                                searchJobs.Add(post);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            if(SearchModel.MySearchJob.MyLocation==post.JobLocation&&SearchModel.MySearchJob.MyTitle==post.JobTitle)
+                            {
+                                searchJobs.Add(post);
+                            }
+
+                        }
+                    }
+                }
+
+                else if (SearchModel.MySearchJob.MyTitle != "" && SearchModel.MySearchJob.MyLocation == "" && SearchModel.MySearchJob.MyInputField != "")
+                {
+                    if (SearchModel.MySearchJob.MyTitle == "All")
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            searchJobs.Add(post);
+                        }
+                    }
+                    else
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            if (SearchModel.MySearchJob.MyInputField == post.JobTitle || SearchModel.MySearchJob.MyTitle == post.JobTitle)
+                            {
+                                searchJobs.Add(post);
+                            }
+
+                        }
+                    }
+                }
+
+                else if (SearchModel.MySearchJob.MyTitle == "" && SearchModel.MySearchJob.MyLocation != "" && SearchModel.MySearchJob.MyInputField != "")
+                {
+                    if (SearchModel.MySearchJob.MyLocation == "All")
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            if (post.JobTitle.ToLower() == SearchModel.MySearchJob.MyInputField.ToLower())
+                            {
+                                searchJobs.Add(post);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (CompanyPost post in posts)
+                        {
+                            if (SearchModel.MySearchJob.MyLocation == post.JobLocation && SearchModel.MySearchJob.MyInputField.ToLower() == post.JobTitle.ToLower())
+                            {
+                                searchJobs.Add(post);
+                            }
+
+                        }
+                    }
+                }
+                else
+                {
+                    foreach(CompanyPost post in posts)
+                    {
+                        if(((SearchModel.MySearchJob.MyTitle == post.JobTitle) && (SearchModel.MySearchJob.MyLocation == post.JobLocation))|| (SearchModel.MySearchJob.MyInputField.ToLower() == post.JobTitle.ToLower()) && (SearchModel.MySearchJob.MyLocation == post.JobLocation))
+                        {
+                            searchJobs.Add(post);
+                        }
+                    }
+                }
+            }
+        }
+        if(searchJobs.Count!=0)
+        {
+            displaySearchJob = true;
+            showJobCard = false;
+            displayspecificLocation = false;
+            displayspecificTitle = false;
+        }
+        else
+        {
+            showJobCard = false;
+            displaySearchJob = false;
+        }
+    }
+    void displayAllJobs()
+    {
+        showJobCard = true;
+        displaySearchJob = false;
+        displayspecificLocation = false;
+        displayspecificTitle = false;
+        jobNotFind = false;
+    }
+    void CheckboxClicked(string CheckID, object checkedValue)
+    {
+        if (!(bool)checkedValue)
+        {
+            foreach(CompanyPost postLoop in specificLocations.ToArray())
+            {
+                if(CheckID==postLoop.JobLocation)
+                {
+                    specificLocations.Remove(postLoop);
+                    if (specificLocations.Count == 0)
+                    {
+                        displayspecificLocation = false;
+                        if (specificTitles.Count == 0)
+                        {
+                            showJobCard = true;
+                        }
+                    }
+                }
+            }
+
+        }
+        else
+        {
+            foreach (CompanyPost postLoop in posts)
+            {
+                if (CheckID == postLoop.JobLocation)
+                {
+                    specificLocations.Add(postLoop);
+                    showJobCard = false;
+                    displayspecificLocation = true;
+                }
+            }
+
+        }
+
+    }
+
+    void TitleCheckboxClicked(string CheckID, object checkedValue)
+    {
+        if (!(bool)checkedValue)
+        {
+            foreach (CompanyPost postLoop in specificTitles.ToArray())
+            {
+                if (CheckID == postLoop.JobTitle)
+                {
+                    specificTitles.Remove(postLoop);
+                    if (specificTitles.Count == 0)
+                    {
+                        displayspecificTitle = false;
+                        if (specificLocations.Count == 0)
+                        {
+                            showJobCard = true;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (CompanyPost postLoop in posts)
+            {
+                if (CheckID == postLoop.JobTitle)
+                {
+                    specificTitles.Add(postLoop);
+                    showJobCard = false;
+                    displayspecificTitle = true;
+                }
+            }
+        }
+
+    }
+
+    public void Dispose()
+    {
+        CompanyLoginServiceModel.OnChange -= StateHasChanged;
+        SearchModel.OnChange -= StateHasChanged;
+        SearchClickModel.OnChange -= StateHasChanged;
+    }
+}

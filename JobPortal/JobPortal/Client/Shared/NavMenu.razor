@@ -1,0 +1,554 @@
+﻿@inject IJSRuntime JsRuntime
+@inject HttpClient Http
+@inject CandidateStateService Model
+@inject CompanyStateService CompanyModel
+@inject CandidateLoginService CandidateLoginServiceModel
+@inject CompanyLoginService CompanyLoginServiceModel
+<div class="top-bar">
+    <div class="row">
+        <div class="col-md-7 col-sm-8 col-xs-9">
+            <div class="top-bar-left">
+                <div class="contact">
+                    <span class="mainspan">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>+923 304526000</span>
+                    </span>
+                    <span class="mainspan">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>54000 Lahore, Gulberg Phase III</span>
+                    </span>
+                    <span class="mainspan">
+                        <i class="bi bi-clock-fill"></i>
+                        <span>Mon - Sat 8.00 - 18.00. Sunday CLOSED</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-4 col-xs-3">
+            <div class="top-bar-right">
+                <div class="signup">
+
+                    @if (CandidateLoginServiceModel.MyCandidateLogin == false && CompanyLoginServiceModel.MyCompanyLogin == false)
+                    {
+                        <button type="button" class="signupbtn" data-toggle="modal" data-target="#exampleModal" data-backdrop="true"
+                                style="margin-left: 20px; " @onclick="SignMessages">
+                            Sign Up
+                        </button>
+                        <button type="button" class="loginbtn" data-toggle="modal" data-target="#loginModal" data-backdrop="true" @onclick="@LoginMessages">
+                            Login
+                        </button>
+                    }
+                    else
+                    {
+                        <a class="loginbtn" style="background-color:black !important" @onclick="LogOut" href="/">Logout</a>
+                        <a class="loginbtn" style="background-color:yellowgreen !important; margin-left:20px" href="/profile">Profile</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg " data-spy="affix" data-offset-top="197">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+            <li class="nav-item active mr-5">
+
+
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+
+            </li>
+            <li class="nav-item  mr-5">
+                <a class="nav-link" href="/jobs">Jobs</a>
+            </li>
+
+            <li class="nav-item  mr-5">
+                <a class="nav-link" href="/companies">Companies</a>
+            </li>
+            <li class="nav-item  mr-5">
+                <a class="nav-link" href="/contactus">Contact Us</a>
+            </li>
+            <li class="nav-item  mr-5">
+                <a class="nav-link" href="/membership">Membership</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            <div class="modal-body">
+                <div class="wrapper">
+
+                    <div class="form-container">
+                        <div class="slide-controls">
+                            <input type="radio" name="slide" id="login" checked>
+                            <input type="radio" name="slide" id="signup">
+                            <label for="login" class="slide login" @onclick="candidateSignUp">
+                                Candidate
+
+                            </label>
+                            <label for="signup" class="slide signup" @onclick="companySignUp">
+                                Company
+                            </label>
+
+                            <div class="slider-tab"></div>
+                        </div>
+                        <div class="form-inner">
+
+                            <EditForm Model="@candidateObj" class="login" OnValidSubmit="AddCandidate">
+                                <DataAnnotationsValidator></DataAnnotationsValidator>
+
+                                <div class="field">
+                                    <InputText @bind-Value="@candidateObj.CandidateName" placeholder="Name" />
+                                    <div style="color:red">
+                                        <ValidationMessage For="@(()=>candidateObj.CandidateName)"></ValidationMessage>
+                                    </div>
+
+                                </div>
+                                <div class="field">
+                                    <input @bind-value="@candidateObj.CandidateEmail" type="email" placeholder="Email Address">
+                                    <div style="color:red">
+                                        <ValidationMessage For="@(()=>candidateObj.CandidateEmail)"></ValidationMessage>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <input type="password" @bind-value="@candidateObj.CandidatePassord" placeholder="Password">
+                                    <div style="color:red">
+                                        <ValidationMessage For="@(()=>candidateObj.CandidatePassord)"></ValidationMessage>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <input type="password" @bind-value="@confirmPassword" placeholder="Confirm Password">
+                                    @if (passwordNotTrue)
+                                    {
+                                        <div style="color:red">Password Not Correct</div>
+
+                                    }
+                                    @if (signUp)
+                                    {
+                                        <div style="color:green">@successful</div>
+                                    }
+                                    @if (uniqueEmail)
+                                    {
+                                        <div style="color:red">@successful</div>
+                                    }
+                                </div>
+
+                                <div class="field btn">
+                                    <div class="btn-layer"></div>
+                                    <input type="submit" value="SignUp">
+                                </div>
+
+                            </EditForm>
+
+
+                            <EditForm Model="@company" class="signup" OnValidSubmit="AddCompany">
+                               
+                                <DataAnnotationsValidator></DataAnnotationsValidator>
+                                <div class="field">
+                                    <InputText @bind-Value="@company.CompanyName" placeholder="Company Name" />
+                                    <div style="color:red">
+                                        <ValidationMessage For="@(()=>company.CompanyName)"></ValidationMessage>
+                                    </div>
+                                    </div>
+                                <div class="field">
+                                    <input @bind-value="@company.CompanyEmail" type="email" placeholder="Email" />
+                                    <div style="color:red"><ValidationMessage For="@(()=>company.CompanyEmail)"></ValidationMessage></div>
+                                </div>
+                                <div class="field">
+                                    <input @bind-value="@company.CompanyLocation" type="text" placeholder="Location" />
+                                    <div style="color:red"><ValidationMessage For="@(()=>company.CompanyLocation)"></ValidationMessage></div>
+                                </div>
+                                <div class="field">
+                                    <input @bind-value="@company.CompanyMoto" type="text" placeholder="Motto" />
+                                </div>
+                                <div class="field">
+                                    <input @bind-value="@company.CompanyPassword" type="password" placeholder="Password">
+                                    <div style="color:red"><ValidationMessage For="@(()=>company.CompanyPassword)"></ValidationMessage></div>
+                                </div>
+                                <div class="field">
+                                    <input @bind-value="@confirmCompanyPassword" type="password" placeholder="Confirm password" >
+                                    @if (passwordNotTrueCom)
+                                    {
+                                        <div style="color:red">Password Not Correct</div>
+
+                                    }
+                                    @if (signUpCom)
+                                    {
+                                        <div style="color:green">@successfulCompany</div>
+                                    }
+                                    @if (uniqueEmailCom)
+                                    {
+                                        <div style="color:red">@successfulCompany</div>
+                                    }
+                                </div>
+                                <div class="field btn">
+                                    <div class="btn-layer"></div>
+                                    <input type="submit" value="Signup">
+                                </div>
+                            </EditForm>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            <div class="modal-body">
+
+                <div class="container">
+                    <div class="togglebtns text-center mb-5">
+                        <button id="candidatebtn" @onclick="showCandidate">Candidate</button>
+                        <button id="companybtn" @onclick="showCompany">Company</button>
+                    </div>
+                    @if (showModal)
+                    {
+                        <div id="candidateloginform">
+                            <EditForm Model="@candidateLogin" OnSubmit="checkCandidate">
+                                <h2 class="text-center " style="color: white;">Candidate Login </h2>
+                                @if (candidateMessage)
+                                {
+                                    if (successful == "Not Found" || successful == "Wrong Credentials")
+                                    {
+                                        <h5 style="color:red">@successful</h5>
+                                    }
+                                    else
+                                    {
+                                        <h5 style="color:green">@successful</h5>
+                                    }
+                                }
+                                <input @bind-value="@candidateLogin.CandidateEmail" class="form-control " type="email" placeholder="Email"><br>
+                                
+                                <input @bind-value="@candidateLogin.CandidatePassord" class="form-control " type="password" placeholder="Password"><br>
+                                <div class="formfooter text-right">
+                                    <input class="btn btn-primary" type="submit" value="Login">
+                                </div>
+
+                            </EditForm>
+                        </div>
+                    }
+
+                    @if (showModal)
+                    {
+                        <div id="companyloginform">
+                            <EditForm Model="@companyLogin" OnSubmit="checkCompany">
+                                <h2 class="text-center" style="color: white;">Company Login </h2>
+                                @if (companyMessage)
+                                {
+                                    <h5 style="color:red">@successfulCompany</h5>
+                                }
+                                <input @bind-value="companyLogin.CompanyEmail" class="form-control " type="email" placeholder="Email"><br>
+                                <input @bind-value="companyLogin.CompanyPassword" class="form-control " type="password" placeholder="Password"><br>
+                                <div class="formfooter text-right">
+                                    <input class="btn btn-primary" type="submit" value="Login">
+                                </div>
+                            </EditForm>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+    async Task showCandidate()
+    {
+        await JsRuntime.InvokeVoidAsync(identifier: "candidate");
+        Model.MyCandidateState = new Candidate();
+    }
+    async Task showCompany()
+    {
+        await JsRuntime.InvokeVoidAsync(identifier: "company");
+    }
+    async Task candidateSignUp()
+    {
+        await JsRuntime.InvokeVoidAsync(identifier: "candidateSignUpShow");
+    }
+    async Task companySignUp()
+    {
+        await JsRuntime.InvokeVoidAsync(identifier: "companySignUpShow");
+    }
+    protected async Task onAfterRenderAsync()
+    {
+        await JsRuntime.InvokeVoidAsync("scroll");
+    }
+
+
+
+    Candidate candidateObj = new Candidate();
+    string confirmPassword = "";
+    string passwordMsg = "";
+    string successful = "";
+    bool candidateMessage = false;
+    bool showModal = true;
+    bool showSignModal = true;
+    Candidate[] candidates;
+    Company[] companies;
+    bool uniqueCand = true;
+    bool passwordNotTrue = false;
+    bool signUp = false;
+    bool uniqueEmail = false;
+    bool passwordNotTrueCom = false;
+    bool signUpCom = false;
+    bool uniqueEmailCom = false;
+    protected override async Task OnInitializedAsync()
+    {
+        candidateObj = new Candidate();
+        company = new Company();
+    }
+    public async Task<bool> getCandidate(Candidate candidateOB)
+    {
+        result =await Http.GetStringAsync("odata/candidate");
+        candidates = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<Candidate>>(result).Value.ToArray();
+        Candidate[] candidateList = new Candidate[(candidates.Length)];
+        candidateList = candidates;
+        foreach (Candidate can in candidates)
+        {
+            if (candidateOB.CandidateEmail == can.CandidateEmail)
+            {
+                return true;
+            }
+        }
+        return false ;
+    }
+
+    public async Task AddCandidate()
+    {
+        if (candidateObj.CandidatePassord == confirmPassword)
+        {
+            bool unique = true;
+            result = await Http.GetStringAsync("odata/candidate");
+            candidates = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<Candidate>>(result).Value.ToArray();
+            Candidate[] candidateList = new Candidate[(candidates.Length)];
+            candidateList = candidates;
+            foreach (Candidate can in candidateList)
+            {
+                if (candidateObj.CandidateEmail == can.CandidateEmail)
+                {
+                    unique = false;
+                }
+            }
+            if(unique)
+            {
+                successful = "";
+                await Http.PostAsJsonAsync<Candidate>("api/Add", candidateObj);
+                successful = "Successfully Sign Up";
+                candidateObj = new Candidate();
+                showSignModal = false;
+                confirmPassword = "";
+                signUp = true;
+                uniqueEmail = false;
+                passwordNotTrue = false;
+            }
+            else
+            {
+                successful = "Please Enter Unique Email";
+                uniqueEmail = true;
+            }
+        }
+        else
+        {
+            passwordNotTrue = true;
+            passwordMsg = "You enter Wrong Password";
+            confirmPassword = "";
+            candidateObj.CandidatePassord = "";
+        }
+        candidateMessage = true;
+    }
+
+    Company company = new Company();
+    string confirmCompanyPassword = "";
+    string passwordCompanyMsg = "";
+    string successfulCompany = "";
+    bool companyMessage = false;
+    bool uniqueCom = false;
+    public bool companyUnique(Company companyOB)
+    {
+        foreach (Company com in companies)
+        {
+            if (com.CompanyName==companyOB.CompanyName||com.CompanyEmail==companyOB.CompanyEmail)
+            {
+                uniqueCom = false;
+            }
+        }
+        return uniqueCom;
+    }
+
+    public async Task AddCompany()
+    {
+        if (company.CompanyPassword == confirmCompanyPassword)
+        {
+            bool unique = true;
+            result = await Http.GetStringAsync("odata/companies");
+            companies = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<Company>>(result).Value.ToArray();
+            Company[] companiesList = new Company[companies.Length];
+            companiesList = companies;
+            foreach (Company com in companiesList)
+            {
+                if (com.CompanyName == company.CompanyName || com.CompanyEmail == company.CompanyEmail)
+                {
+                    unique = false;
+                }
+            }
+            if (unique)
+            {
+                string que = $"api/CompanyCrud";
+                await Http.PostAsJsonAsync<Company>(que, company);
+                successfulCompany = "Successfully Sign Up";
+                company = new Company();
+                confirmPassword = "";
+                signUpCom = true;
+                uniqueEmailCom = false;
+                passwordNotTrueCom = false;
+            }
+            else
+            {
+                successfulCompany = "Please Enter Unique Name and Email";
+                uniqueEmailCom = true;
+                signUpCom = false;
+                passwordNotTrueCom = false;
+            }
+
+        }
+        else
+        {
+            passwordCompanyMsg = "You enter Wrong Password";
+            confirmPassword = "";
+            company.CompanyPassword = "";
+            passwordNotTrueCom = true;
+            uniqueEmailCom = false;
+            signUpCom = false;
+        }
+        companyMessage = true;
+
+    }
+
+
+    public string result = "";
+    public async Task checkCandidate()
+    {
+        string que = $"odata/candidate?$filter=candidateEmail eq '" + candidateLogin.CandidateEmail + "'";
+        result = await Http.GetStringAsync(que);
+        Candidate[] candidates = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<Candidate>>(result).Value.ToArray();
+        if (candidates.Length == 0)
+        {
+            successful = "Wrong Credentials";
+
+        }
+        else
+        {
+            if (candidates[0].CandidateEmail == candidateLogin.CandidateEmail && candidateLogin.CandidatePassord == candidates[0].CandidatePassord)
+            {
+                candidateLogin = new Candidate();
+                Model.MyCandidateState = new Candidate();
+                Model.MyCandidateState = candidates[0];
+                result = Model.MyCandidateState.CandidateName;
+                CandidateLoginServiceModel.MyCandidateLogin = true;
+                showModal = false;
+            }
+            else
+            {
+                successful = "Not Found";
+            }
+        }
+        candidateMessage = true;
+
+    }
+    public Candidate candidateLogin = new Candidate();
+    public Company companyLogin = new Company();
+
+    public string resultCompany = "";
+    public async Task checkCompany()
+    {
+        string que = $"odata/companies?$filter=companyEmail eq '" + companyLogin.CompanyEmail + "'";
+        resultCompany = await Http.GetStringAsync(que);
+        Company[] companies = Newtonsoft.Json.JsonConvert.DeserializeObject<ODataCandidate<Company>>(resultCompany).Value.ToArray();
+        if (companies.Length == 0)
+        {
+            successfulCompany = "Wrong Credentials";
+        }
+        else
+        {
+            if (companies[0].CompanyEmail == companyLogin.CompanyEmail && companyLogin.CompanyPassword == companies[0].CompanyPassword)
+            {
+
+                companyLogin = new Company();
+                CompanyModel.MyCompanyState = new Company();
+                CompanyModel.MyCompanyState = companies[0];
+                resultCompany = CompanyModel.MyCompanyState.CompanyPassword;
+                CompanyLoginServiceModel.MyCompanyLogin = true;
+                showModal = false;
+            }
+            else
+            {
+                successfulCompany = "Not Found";
+            }
+        }
+        companyMessage = true;
+
+    }
+    public void LoginMessages()
+    {
+        candidateMessage = false;
+        companyMessage = false;
+        showModal = true;
+        candidateLogin = new Candidate();
+        companyLogin = new Company();
+
+    }
+    public void SignMessages()
+    {
+        candidateMessage = false;
+        companyMessage = false;
+        showSignModal = true;
+        candidateObj = new Candidate();
+        signUp = false;
+        passwordNotTrue = false;
+        uniqueEmailCom = false;
+        uniqueEmail = false;
+        signUpCom = false;
+        passwordNotTrueCom = false;
+        company = new Company();
+        confirmPassword = "";
+        confirmCompanyPassword = "";
+    }
+
+    public void LogOut()
+    {
+        CandidateLoginServiceModel.MyCandidateLogin = false;
+        CompanyLoginServiceModel.MyCompanyLogin = false;
+    }
+
+
+}
