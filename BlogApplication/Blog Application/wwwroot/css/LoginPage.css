@@ -1,0 +1,45 @@
+﻿.field-validation-error{
+    color:red;
+}
+.input-validation-error{
+    border: 1px solid red;
+    background-color: salmon;
+}
+
+body {
+    background-color: cornflowerblue;
+}
+
+.container {
+    line-height: 3rem;
+    padding: 30px 50px;
+    margin-top: 120px;
+    background-color: white;
+    width: 40%;
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.h2 {
+    text-align: center;
+}
+
+.button1 {
+    width: 100px;
+}
+
+.p1 {
+    text-align: center;
+}
+
+.p2 {
+    text-align: center;
+    color: white;
+}
+.p2 a {
+    color: mistyrose;
+}

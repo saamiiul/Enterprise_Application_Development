@@ -1,0 +1,64 @@
+﻿@model Blog_Application.Models.Member
+
+<html>
+<head>
+    <title>SignUp</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/SignUpPage.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="/SignUp/SignUpPage">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Sign Up</h2>
+                    <p class="p1">Please fill this form to create an acount!</p>
+                    <hr>
+                    <div class="form row">
+                        <div class="col-sm-6">
+                            <input asp-for="firstName" placeholder="First Name">
+                            <span asp-validation-for="firstName"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input asp-for="lastName" placeholder="Last Name">
+                            <span asp-validation-for="lastName"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="userName" placeholder="User Name">
+                        <span asp-validation-for="userName"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="email" placeholder="Email Address">
+                        <span asp-validation-for="email"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="password" type="password" placeholder="Password">
+                        <span asp-validation-for="password"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="confirmPassword" type="password" placeholder="Confirm Password">
+                        <span asp-validation-for="confirmPassword"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label" for="radio1">
+
+                            <input  class="radioButton" type="radio" name="radiobtn">Male
+                            &nbsp
+                            <input class="radioButton" type="radio" name="radiobtn">Female
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label" for="check1">
+                            <input class="checkBox" name="checkbtn" type="checkbox"> I accept the <u> <a asp-action="TermsOfUse"> Terms of use </a></u> & <u> <a asp-action="PrivacyPolicy"> Privacy policy </a> </u>.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><b>Sign Up</b></button>
+                </div>
+            </div>
+        </form>
+    </div><br>
+    <p class="p2">Already have an acount?<a asp-controller="Login" asp-action="LoginPage"> Login here.</a></p>
+</body>
+</html>

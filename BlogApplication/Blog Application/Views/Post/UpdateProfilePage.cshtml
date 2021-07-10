@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        .container {
+            line-height: 3rem;
+            padding: 30px 50px;
+            margin-top: 50px;
+            background-color: white;
+            width: 50%;
+        }
+
+        input {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        h2 {
+            text-align: left;
+        }
+
+        custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        p {
+            line-height: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="navbar-brand" href="#">NavBar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="signIn.html">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+            </li>
+        </ul>
+    </nav>
+    <div class=" container">
+        <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Profile</h2>
+                    <hr>
+                    <div class="form-group">
+                        <label>User Name*</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Email*</label>
+                        <input type="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Image*</label>
+                        <p>Currently:<a href="">image.ong</a></p>
+                        <p>Change:</p>
+                        <input type="file" class="custom-file">
+                    </div>
+                    <div class="form-group">
+                        <label>Old Password*</label>
+                        <input type="password">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password*</label>
+                        <input type="password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"><b>Update</b></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div><br><br>
+</body>
+</html>

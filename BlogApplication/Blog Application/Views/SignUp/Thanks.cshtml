@@ -1,0 +1,17 @@
+﻿@model Blog_Application.Models.Member
+
+<html>
+<head>
+    <title> Thanks </title>
+</head>
+<body>
+    <h1 style="text-align: center"> Your information saved successfully. </h1>
+    <p class="p1" style="text-align: center; color: white;">Want to?</p><a asp-controller="Login" asp-action="LoginPage"> Login. </a>
+    <p> You Entered Following Details.</p>
+    <p>@Model.firstName</p>
+    <p>@Model.lastName</p>
+    <p>@Model.email</p>
+    <p>@Model.password</p>
+    <p>@Model.confirmPassword</p>
+</body>
+</html>

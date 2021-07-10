@@ -1,0 +1,14 @@
+﻿@model Blog_Application.Models.User
+<html>
+<head>
+    <title> Forgotten Password </title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="form-group">
+        <input asp-for="email" placeholder="Email Address">
+        <span asp-validation-for="email"></span>
+    </div>
+    <button type="submit" class="btn btn-primary"><b>Confirm</b></button>
+</body>
+</html>

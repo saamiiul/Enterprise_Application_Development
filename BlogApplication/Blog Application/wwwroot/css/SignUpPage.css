@@ -1,0 +1,51 @@
+﻿.field-validation-error {
+    color: red;
+}
+
+.input-validation-error {
+    border: 1px solid red;
+    background-color: salmon;
+}
+
+body {
+    background-color: cornflowerblue;
+}
+
+.container {
+    line-height: 3rem;
+    padding: 20px 50px;
+    margin-top: 15px;
+    background-color: white;
+    width: 50%;
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.checkBox {
+    width: auto
+}
+
+.radioButton {
+    width: auto
+}
+.p1 {
+    color: lightslategrey;
+}
+
+.p2 {
+    text-align: center;
+    color: white;
+}
+
+.p2 a {
+    color: mistyrose;
+}
+
+button {
+    border-radius: 20px;
+    width: 175px;
+}

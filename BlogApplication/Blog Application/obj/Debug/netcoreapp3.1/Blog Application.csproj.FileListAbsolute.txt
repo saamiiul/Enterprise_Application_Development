@@ -1,0 +1,120 @@
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.exe
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.deps.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.runtimeconfig.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.runtimeconfig.dev.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.Views.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.Views.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.csprojAssemblyReference.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.AssemblyInfoInputs.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.AssemblyInfo.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.csproj.CoreCompileInputs.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorAssemblyInfo.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorAssemblyInfo.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\staticwebassets\Blog Application.StaticWebAssets.Manifest.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\staticwebassets\Blog Application.StaticWebAssets.xml
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\scopedcss\bundle\Blog Application.styles.css
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.TagHelpers.input.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.TagHelpers.output.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorCoreGenerate.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Home\Main.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorTargetAssemblyInfo.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorTargetAssemblyInfo.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.Views.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.genruntimeconfig.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.csproj.CopyComplete
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Login\LoginPage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\SignUpPage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\PrivacyPolicy.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\TermsofUse.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\Thanks.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Post\HomePage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.exe
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.deps.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.runtimeconfig.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.runtimeconfig.dev.json
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.Views.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Blog Application.Views.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.csprojAssemblyReference.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.AssemblyInfoInputs.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.AssemblyInfo.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.csproj.CoreCompileInputs.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorAssemblyInfo.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorAssemblyInfo.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\staticwebassets\Blog Application.StaticWebAssets.Manifest.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\staticwebassets\Blog Application.StaticWebAssets.xml
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\scopedcss\bundle\Blog Application.styles.css
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.TagHelpers.input.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.TagHelpers.output.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorCoreGenerate.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Home\Main.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Login\LoginPage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Post\HomePage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\PrivacyPolicy.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\SignUpPage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\TermsOfUse.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\SignUp\Thanks.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorTargetAssemblyInfo.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.RazorTargetAssemblyInfo.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.Views.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.csproj.CopyComplete
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.dll
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.pdb
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Blog Application.genruntimeconfig.cache
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Login\ForgetPage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Post\CreatePostPage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Post\UpdatePostPage.cshtml.g.cs
+C:\Users\samiu\OneDrive\Desktop\Enterprise_Application_Development\EAD\Blog Application\Blog Application\obj\Debug\netcoreapp3.1\Razor\Views\Post\UpdateProfilePage.cshtml.g.cs
